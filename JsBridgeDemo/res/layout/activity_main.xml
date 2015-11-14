@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.jsbridgedemo.MainActivity" >
+
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_info"
+        android:orientation="horizontal">
+        
+        <EditText 
+        	android:id="@+id/edt_username"
+        	android:layout_weight="1"
+        	android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="username"/>
+        
+        <EditText 
+        	android:id="@+id/edt_password"
+        	android:layout_marginLeft="10dp"
+        	android:layout_weight="1"
+        	android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="password"/>
+        
+    </LinearLayout>
+
+    
+       <!-- button 演示Java调用web -->
+    <Button
+        android:layout_below="@+id/ll_info"
+        android:id="@+id/bt_set"
+        android:layout_width="match_parent"
+        android:text="Set Userinfo to web"
+        android:layout_height="48dp"
+        />
+    
+    <Button
+        android:layout_below="@+id/bt_set"
+        android:id="@+id/bt_get"
+        android:layout_width="match_parent"
+        android:text="Get Userinfo from web"
+        android:layout_height="48dp"
+        />
+    
+    <!-- webview 演示web调用Java -->
+    <com.github.lzyzsd.jsbridge.BridgeWebView
+        android:layout_below="@+id/bt_get"
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+     </com.github.lzyzsd.jsbridge.BridgeWebView>
+
+</RelativeLayout>
